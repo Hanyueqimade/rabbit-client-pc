@@ -1,6 +1,5 @@
 import axios from "axios";
 import store from "@/store";
-// import {config} from "@vue/cli-plugin-eslint/eslintOptions";
 
 //创建一个新的axios实例对象，用于小兔鲜的相关请求
 export const baseURL = "https://pcapi-xiaotuxian-front-devtest.itheima.net/";
