@@ -19,18 +19,27 @@ const user = {
     };
   },
   mutations: {
-    setUser(state, payload) {
-      if (Object.keys(payload).length !== 0) {
-        // 非空
-        state.profile = {
-          ...state.profile,
-          ...payload,
-        };
-      } else {
-        // 用户为空
-        state.profile = {};
+    // setUser(state, payload) {
+    //   if (Object.keys(payload).length !== 0) {
+    //     // 非空
+    //     state.profile = {
+    //       ...state.profile,
+    //       ...payload,
+    //     };
+    //   } else {
+    //     // 用户为空
+    //     state.profile = {};
+    //   }
+    // },
+    setUser(state,payload){
+      if(Object.keys(payload).length>0){
+        state.profile={
+          ...state.profile,...payload
+        }
+      }else {
+        state.profile={}
       }
-    },
+    }
   },
 };
 
