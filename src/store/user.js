@@ -1,3 +1,5 @@
+// import {getCategoriesApi} from "@/api/home";
+
 const user = {
   namespaced: true,
   state() {
@@ -31,15 +33,16 @@ const user = {
     //     state.profile = {};
     //   }
     // },
-    setUser(state,payload){
-      if(Object.keys(payload).length>0){
-        state.profile={
-          ...state.profile,...payload
-        }
-      }else {
-        state.profile={}
+    setUser(state, payload) {
+      if (Object.keys(payload).length > 0) {
+        state.profile = {
+          ...state.profile,
+          ...payload,
+        };
+      } else {
+        state.profile = {};
       }
-    }
+    },
   },
 };
 

@@ -1,13 +1,12 @@
 <template>
-  <div class="box">box</div>
+  <div class="box"></div>
+
   <RouterView />
 </template>
 
 <script>
-
 export default {
   name: "App",
-
 };
 </script>
 
