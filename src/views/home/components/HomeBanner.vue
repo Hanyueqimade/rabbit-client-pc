@@ -8,7 +8,7 @@ import { ref } from "vue";
 import { getBanners } from "@/api/home";
 
 export default {
-  name: "HomeBanner", //面板组件
+  name: "HomeBanner",
   setup() {
     const { banners, getData } = useBanners();
     getData();
