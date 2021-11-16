@@ -15,3 +15,15 @@ export function getNewGoods(limit = 4) {
 export function getHotGoods() {
   return requestWithoutToken("/home/hot", "get");
 }
+
+export function getHotBrand(limit = 10) {
+  return requestWithoutToken("/home/brand", "get", { limit });
+}
+
+export function getProducts() {
+  return requestWithoutToken("/home/goods", "get");
+}
+
+export function getSpecial(limit = 3) {
+  return requestWithoutToken("/home/special", "get", { limit });
+}
