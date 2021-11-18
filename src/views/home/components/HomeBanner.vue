@@ -4,25 +4,15 @@
   </div>
 </template>
 <script>
-import { ref } from "vue";
-import { getBanners } from "@/api/home";
-
+import useBanners from "@/hooks/useBanners";
 export default {
   name: "HomeBanner",
   setup() {
     const { banners, getData } = useBanners();
-    getData();
-    return { banners, getData };
+    getData(1);
+    return { banners };
   },
 };
-function useBanners() {
-  const banners = ref();
-  const getData = () =>
-    getBanners().then((data) => {
-      banners.value = data.result;
-    });
-  return { banners, getData };
-}
 </script>
 <style scoped lang="less">
 .home-banner {
