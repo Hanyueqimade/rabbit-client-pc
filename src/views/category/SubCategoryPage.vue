@@ -14,6 +14,8 @@
           >
         </Transition>
       </XtxBread>
+      <SubFilter @onFilterParamsChanged="onParamsChanged" />
+      <XtxCheckbox v-model="isCheckedValue">仅显示有货商品</XtxCheckbox>
     </div>
   </AppLayout>
 </template>
@@ -23,15 +25,21 @@ import AppLayout from "@/components/AppLayout";
 import XtxBread from "@/components/library/XtxBread";
 import XtxBreadItem from "@/components/library/XtxBreadItem";
 import { useStore } from "vuex";
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useRoute } from "vue-router";
+import SubFilter from "@/views/category/components/SubFilter";
+import XtxCheckbox from "@/components/library/XtxCheckbox";
 export default {
   name: "SubCategoryPage",
-  components: { XtxBreadItem, XtxBread, AppLayout },
+  components: { XtxCheckbox, SubFilter, XtxBreadItem, XtxBread, AppLayout },
   setup() {
     const bread = useBread();
+    const onParamsChanged = (target) => {
+      console.log(target);
+    };
 
-    return { bread };
+    const isCheckedValue = ref(false);
+    return { bread, onParamsChanged, isCheckedValue };
   },
 };
 function useBread() {

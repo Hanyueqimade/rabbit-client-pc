@@ -15,6 +15,12 @@
         v-if="banners"
         :style="{ height: '500px' }"
       />
+      <ShowSubCategoryList
+        :subCategories="topCategory.children"
+        v-if="topCategory"
+      />
+
+      <CommendGoods />
     </div>
   </AppLayout>
 </template>
@@ -23,13 +29,21 @@
 import AppLayout from "@/components/AppLayout";
 import XtxBread from "@/components/library/XtxBread";
 import XtxBreadItem from "@/components/library/XtxBreadItem";
+import ShowSubCategoryList from "@/views/category/components/ShowSubCategoryList";
+import CommendGoods from "@/views/category/components/CommendGoods";
 import { useStore } from "vuex";
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 import useBanners from "@/hooks/useBanners";
 export default {
   name: "TopCategoryPage",
-  components: { XtxBreadItem, XtxBread, AppLayout },
+  components: {
+    XtxBreadItem,
+    XtxBread,
+    AppLayout,
+    ShowSubCategoryList,
+    CommendGoods,
+  },
   setup() {
     const topCategory = useCategory();
     const { banners, getData } = useBanners();
